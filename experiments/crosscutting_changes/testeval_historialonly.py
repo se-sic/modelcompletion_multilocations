@@ -36,10 +36,6 @@ input_path_db= "../dataset_preprocessed/databases/"
 name_db = "matrix_historial_per_graph_trainval.pkl"
 
 input_path_data = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
-#input_path_data = "/scratch/welter/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"  
-#output= "../results_final/"
-#output =  "/scratch/welter/CrossCutting/output_baselines/final_historical_ONLYONE_mergedemb_GPU/"
-#input_path_db= "/scratch/welter/CrossCutting/historialmatrix/ONLY_ONE_TRYONE/" #"../dataset_preprocessed/databases/"
 
 
 

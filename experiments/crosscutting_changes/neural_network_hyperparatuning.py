@@ -26,10 +26,7 @@ device = torch.device('cuda' if torch.cuda.is_available()
 
 
 
-#input_path = "/scratch/welter/CrossCutting/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"  
-     
-#directory_path_data =  "/scratch/welter/CrossCutting/neuralnetworkpairs_gpu/embedding_data_new_branch_ONLYONE_mergedemb/"
-  
+
 directory_path_data =   "../output_dataset_label/hyperparametertuning_trainset" #previously EQUAL to  neuralnetworkpairs_gpu/data_input_nn_noprespres/"
 input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
 #input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids-indivual-embeddings_small/diffgraphs/"
@@ -37,7 +34,6 @@ input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-s
 
 #for output
 base_path = "../output_dataset_label/neural_network_data_small_output/"
-  #base_path =  "/scratch/welter/CrossCutting/outputneuralnetwork/ZZ_hyperparametertuning_BASIC/"
 
 EPOCHS=2
 

@@ -31,9 +31,6 @@ output= "../results_final/"
 
 name_sub_folders= "/default/" #"/diffgraphs/"
 
-#input_path_data = "/scratch/welter/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"
-
-#output=  "/scratch/welter/CrossCutting/output_baselines/final_random_ONLYONE_mergedemb_GPU/"
 
 input_path_splitting = "../output_dataset_label/embedding_data_refactored2"
 

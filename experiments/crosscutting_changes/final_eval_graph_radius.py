@@ -517,7 +517,7 @@ if __name__ == "__main__":
     #minimalerradisu: min_dist
     radi_dependence(df, min_dist=1, radii=range(2, 10),onlyMax=False, metric_family="prec_all", filter_inf=True)
     #plot_mean_distance_by_rank(df)
-    #Svens stuff 
+
     #plot_precision_vs_radius_target_v2(df)
 
 
