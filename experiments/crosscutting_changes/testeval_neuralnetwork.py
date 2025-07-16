@@ -212,13 +212,11 @@ if __name__ == "__main__":
         
         print("START")
        
-        #output_path= f"/scratch/welter/CrossCutting/neuralnetworks/final_refactoring/"
         input_path_graphs = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
        # input_path_graphs="../output_dataset_label/embedding_data_refactored2"
       
         input_path_test_data = "../output_dataset_label/embedding_data_refactored2"
        # input_path_test_data = "../output_dataset_label/embedding_data_refactored2"
-        #input_neural_network =  f"/scratch/welter/CrossCutting/neuralnetworks/nnout_split-TRAINVAL_batch-128_layers-2048-128_loss-BCEWithLogitsLoss_focal-1_alpha-0.9_gamma-2.0_mispen-3.0_posw-0.45_lr-0.001_epochs-5000"
         input_neural_network =  "../output_dataset_label/neural_network_data_small_output_refactored/nnout_split-TRAINVALTEST_batch-1024_layers-2048-128_loss-BCEWithLogitsLoss_alpha-0.79_gamma-3.0_mispen-6.0_posw-3.6_lr-0.003_epochs-1000/"
         
         output= "../results_final/"
@@ -226,8 +224,6 @@ if __name__ == "__main__":
 
 
 
-        #output_path = f"/scratch/welter/CrossCutting/output_dataset_label/neural_network_data_isPredessor_bugfix0901_subfolders/{x}"
-        #output_neural_network = f"/scratch/welter/CrossCutting/output_dataset_label/subsets_trained/{x}/"
         EPOCH= EPOCHS[i]
         #print(output_path)
         #print(EPOCH)

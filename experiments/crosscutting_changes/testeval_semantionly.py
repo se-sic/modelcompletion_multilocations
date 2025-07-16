@@ -27,7 +27,6 @@ TRECHHOLD_DOWN =0.5
 K=5
 
 
-#input_path_data = f"/scratch/welter/CrossCutting/neuralnetworkpairs/data_input_nn_noprespres/"
 #print(output_path)
 #neural_network_data -> all we have locally 
 #output_path = "../output_dataset_label/TAGRETneural_network/"
@@ -38,9 +37,6 @@ input_path_data = "../output_dataset_label/embedding_data_refactored2"
 output_path= "../results_final/"      
 
 
-#input_path_data =  "/scratch/welter/CrossCutting/neuralnetworkpairs_gpu/embedding_data_new_branch_ONLYONE_mergedemb/"
-#output_path =  "/scratch/welter/CrossCutting/output_baselines/final_Semantics_ONLYONE_mergedemb_GPU/"
- 
 
 
 

@@ -29,9 +29,6 @@ name_sub_folders= "/default/" #"/diffgraphs/"
 output_path ="../dataset_preprocessed/databases/"
 name_db = "matrix_historial_per_graph_trainval.pkl"
 input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
-#input_path = "/scratch/welter/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"  
-
-#output_path ="/scratch/welter/CrossCutting/historialmatrix/ONLY_ONE_TRYONE/"
 
 
 def build_matrix():

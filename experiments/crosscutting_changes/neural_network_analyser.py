@@ -303,17 +303,10 @@ def __main__():
     #LOCAL STUFF 
     input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
     #input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids-indivual-embeddings_small/diffgraphs/"
-    #input_path = "/scratch/welter/CrossCutting/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"
-    
-    #directory_path_data =  "/scratch/welter/CrossCutting/neuralnetworkpairs/embedding_data_new_branch_indivudalemb/"
+   
     directory_path_data =   "../output_dataset_label/embedding_data_refactored2"
     base_path = "../output_dataset_label/neural_network_data_small_output_refactored2/"
-    #base_path =  "/scratch/welter/CrossCutting/neuralnetworksgpu/"
-
-   # input_path = "/scratch/welter/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"
-    #directory_path_data =  "/scratch/welter/CrossCutting/neuralnetworkpairs_gpu/embedding_data_new_branch_ONLYONE_mergedemb/"
-    #base_path =  "/scratch/welter/CrossCutting/outputneuralnetwork/final_NN_ONLYONE_mergedemb_limit100000/"
-
+   
 
 
 
