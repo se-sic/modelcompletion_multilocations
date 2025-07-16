@@ -42,3 +42,5 @@ Files starting with `Helper` are called by the rest.
 Modules follow the same pattern.
 
 ## Data
+
+The data and intermediate results of the approach are for simplicity provided in the `data` folder.
