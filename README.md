@@ -2,7 +2,7 @@
 
 ## Paper  
 
-Additional information regarding the paper is given in the PDF file of the repository. More precisely, the paper has an appendix there; for more info, just scroll down to the appendix at the very end of the paper.
+Additional information regarding the paper is given in the PDF file: `Multi-Location_Software Model_Completion.pdf` of the repository. More precisely, the paper has an appendix there; for more info, just scroll down to the appendix at the very end of the paper.
 
 ## Code 
 
