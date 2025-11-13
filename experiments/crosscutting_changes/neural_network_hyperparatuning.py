@@ -14,19 +14,20 @@ sys.path.insert(0, parent_dir)
 sys.path.insert(0, grandparent_dir)
 
 # Import project modules
-from experiments.crosscutting_changes.HELPER_configuration import COMBINATION
-from experiments.crosscutting_changes.HELPER_neural_networks_dataloader import create_datasets
+from experiments.crosscutting_changes.helper.HELPER_configuration import COMBINATION
+from experiments.crosscutting_changes.helper.HELPER_neural_networks_dataloader import create_datasets
 from experiments.crosscutting_changes.neural_network_analyser import SAMPLE_SUBSET, train_model
-from experiments.crosscutting_changes.HELPER_neural_networks import AttentionClassifier, NonLinearModel
+from experiments.crosscutting_changes.helper.HELPER_neural_networks import AttentionClassifier, NonLinearModel
 
-# Device setup
 device = torch.device('cuda' if torch.cuda.is_available()
                      #  else 'mps' if torch.backends.mps.is_available()
                          else 'cpu')
 
 
 
-
+#input_path = "/scratch/TODO/CrossCutting/dataset_node_embeddings_text-embedding-3-small-with-ids/diffgraphs/"  
+#directory_path_data =  "/scratch/TODO/CrossCutting/neuralnetworkpairs_gpu/embedding_data_new_branch_ONLYONE_mergedemb/"
+  
 directory_path_data =   "../output_dataset_label/hyperparametertuning_trainset" #previously EQUAL to  neuralnetworkpairs_gpu/data_input_nn_noprespres/"
 input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
 #input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids-indivual-embeddings_small/diffgraphs/"
@@ -34,11 +35,10 @@ input_path = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-s
 
 #for output
 base_path = "../output_dataset_label/neural_network_data_small_output/"
+#base_path =  "/scratch/TODO/CrossCutting/outputneuralnetwork/ZZ_hyperparametertuning_BASIC/"
 
 EPOCHS=2
-
 TRIALS=200
-
 
 
 # Objective function for Optuna
@@ -162,8 +162,7 @@ def objective(trial, train_dataset, val_dataset, input_dim, networktype):
 # Run Optuna
 if __name__ == "__main__":
 
-   #TODO 
-   # Add a median pruner: study = optuna.create_study(direction='maximize', pruner=optuna.pruners.MedianPruner()).
+  
     train_dataset, test_dataset, val_dataset, input_dim = create_datasets(
     random_seed=42,
     sample_subset=SAMPLE_SUBSET,

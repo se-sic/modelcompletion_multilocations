@@ -17,10 +17,9 @@ grandparent_dir = os.path.dirname(parent_dir)
 sys.path.insert(0, parent_dir)
 sys.path.insert(0, grandparent_dir)
 
-from experiments.crosscutting_changes.HELPER_configuration import COMBINATION
-from experiments.crosscutting_changes.HELPER_eval import compute_precison_recall_perfile, load_test_data, save_and_print_statistics
-from modules.graph.io import load_components_networkx
-from experiments.crosscutting_changes.HELPER_neural_networks import  NonLinearModel, AttentionClassifier
+from experiments.crosscutting_changes.helper.HELPER_configuration import COMBINATION
+from experiments.crosscutting_changes.helper.HELPER_eval import compute_precison_recall_perfile, get_graphs, load_test_data, save_and_print_statistics
+from experiments.crosscutting_changes.helper.HELPER_neural_networks import  NonLinearModel, AttentionClassifier
 
 # Set device
 device = torch.device('mps' if torch.has_mps else 'cuda' if torch.cuda.is_available() else 'cpu')
@@ -29,6 +28,8 @@ TRECHHOLD_UP= 1
 TRECHHOLD_DOWN =0.5
 K=5
 name_sub_folders= "/default/"
+target_subfolder="modeling.emft.emf-client!!bundles_org.eclipse.emf.ecp.view.custom.model_model_custom.ecore"
+
 # Function to evaluate the model on the test set
 def evaluate_model(input_path_graphs, input_path_test_data, output_neural_network,output_path,  EPOCH):
     # Load test data
@@ -43,23 +44,9 @@ def evaluate_model(input_path_graphs, input_path_test_data, output_neural_networ
     #input_dim = list(all_test_node_pairs.values())[0].shape[1] * list(all_test_node_pairs.values())[0].shape[2]
 
     
-    #get the graphs for computing graph statistics 
-    for folder_name in os.listdir(input_path_graphs):
-        # Generate name for the output folder
-        if not os.path.isdir(input_path_graphs + '/' + folder_name):
-                continue
-        input_dir = input_path_graphs + '/' + folder_name + name_sub_folders
-        
-        # do the dataset splitting
-        graphs = load_components_networkx(data_folder=input_dir, mark_filename=True)
-        allgraphs[folder_name] = {}
-        for graph in graphs:
-            allgraphs[folder_name][int(graph.diff_id.split("_")[1].split(".")[0])] = graph
-            G_undirected = graph.to_undirected()
-            if not nx.is_connected(G_undirected):
-                print(f"[WARN] Graph  in {folder_name} is NOT connected.")
-        
-
+     #get the graphs for computing graph statistics 
+    allgraphs = get_graphs(input_path_graphs, name_sub_folders, target_subfolder)
+      
         
     #model = NonLinearModel(1536,[2048, 128] ).to(device)
     model = AttentionClassifier(embed_dim=1536, num_heads=16).to(device)
@@ -212,18 +199,24 @@ if __name__ == "__main__":
         
         print("START")
        
-        input_path_graphs = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_small/diffgraphs/"
+        #output_path= f"/scratch/TODO/CrossCutting/neuralnetworks/final_refactoring/"
+        input_path_graphs = "../output_dataset_label/dataset_node_embeddings_text-embedding-3-small-with-ids_majorRevision_onlytest_small/diffgraphs/"
        # input_path_graphs="../output_dataset_label/embedding_data_refactored2"
       
-        input_path_test_data = "../output_dataset_label/embedding_data_refactored2"
+        #input_path_test_data = "../output_dataset_label/embedding_data_refactored2"
+        input_path_test_data = "../resultsmajorrevision/datasets_major_revision_sample_10fold/fold_1__eclipse.e4!!bundles_org.eclipse.e4.ui.model.workbench_model_UIElements.ecore/"
+   
        # input_path_test_data = "../output_dataset_label/embedding_data_refactored2"
+        #input_neural_network =  f"/scratch/TODO/CrossCutting/neuralnetworks/nnout_split-TRAINVAL_batch-128_layers-2048-128_loss-BCEWithLogitsLoss_focal-1_alpha-0.9_gamma-2.0_mispen-3.0_posw-0.45_lr-0.001_epochs-5000"
         input_neural_network =  "../output_dataset_label/neural_network_data_small_output_refactored/nnout_split-TRAINVALTEST_batch-1024_layers-2048-128_loss-BCEWithLogitsLoss_alpha-0.79_gamma-3.0_mispen-6.0_posw-3.6_lr-0.003_epochs-1000/"
         
-        output= "../results_final/"
+        output= "../results_final/majorrevision/"
 
 
 
 
+        #output_path = f"/scratch/TODO/CrossCutting/output_dataset_label/neural_network_data_isPredessor_bugfix0901_subfolders/{x}"
+        #output_neural_network = f"/scratch/TODO/CrossCutting/output_dataset_label/subsets_trained/{x}/"
         EPOCH= EPOCHS[i]
         #print(output_path)
         #print(EPOCH)

@@ -1,17 +1,12 @@
 import ast
-import json
-import math
 import os
 import sys
 import sys
 
 
-
 print("python path")
 current_dir = os.path.dirname(os.path.abspath(__file__))
-import numpy as np
-from langchain_huggingface import HuggingFaceEmbeddings
-from langchain_huggingface.llms import HuggingFacePipeline
+
 # Get the parent directory
 parent_dir = os.path.dirname(current_dir)
 # Get the grandparent directory (parent of the parent)
@@ -22,10 +17,8 @@ sys.path.insert(0, parent_dir)
 # Add the grandparent directory to sys.path
 sys.path.insert(0, grandparent_dir)
 print(sys.path)
-from modules.graph.io import load_components_networkx, save_components_networkx
-from scripts.compute_connected_components import assign_ids_to_diff_graphs
-from experiments.crosscutting_changes.HELPER_node_emb import get_node_embeddings, individual_embeddings
-from modules.domain_specific.change_graph import clean_up_string, clean_up_string_ast_literal
+from experiments.crosscutting_changes.helper.HELPER_GENERIC import clean_up_string_ast_literal, load_components_networkx, save_components_networkx
+from experiments.crosscutting_changes.helper.HELPER_node_emb import get_node_embeddings, individual_embeddings
 
 
 
