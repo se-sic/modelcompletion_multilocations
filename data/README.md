@@ -6,7 +6,7 @@ For simplicity, we included most of the data (when suitable and not too large) d
 
 We placed all model difference graphs in `diffgraphs_new.zip`. 
 These include the different projects and their commit history.
-We gained these graphs with the help of EMFCompare. 
+We gained these graphs with the help of EMFCompare. The original dataset is included: `org.eclipse.git_original_repairvision.7z` 
 
 # Embeddings
 
@@ -19,6 +19,7 @@ This is also the case for the node embeddings for the cross-project evaluation, 
 # Network
 The file `final_neural_network_model_epoch_3.pth` contains the trained neural network weights used in our evaluation. This model can be loaded directly for inference or further analysis.
 
+For cross-project evaluation, `cross-project_validation -> crossproject_bestepochs_networks`
 
 # Evaluation
 
@@ -27,4 +28,4 @@ which can be passed into the scripts under `experiments/crosscutting_changes/fin
 
 # Mutli-location model completion
 
-The database from Tinnes et al. is included under multilocation_completion
+The database from Tinnes et al. is included under multilocation_completion. The results of metrics are also included there. 
